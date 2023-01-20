@@ -10,26 +10,41 @@
   </head>
 
   <body>
+
+<!-- Start Page -->
+
+    <!-- High Scores -->
     <div class="scores"><a href="highscores.html">View Highscores</a></div>
-
-    <div class="timer">Time: <span id="time">0</span></div>
-
+    <!-- Timer -->
+    <div class="timer">Time: <span id="time">0</span></div>  <!-- Is Time required on a main page? Could be moved into separate file with Qestions -->
+    
+    
+    <!-- Quiz Home Page ------------  added section markers -->
+    <section>
     <div class="wrapper">
       <div id="start-screen" class="start">
         <h1>Coding Quiz Challenge</h1>
-        <p>
+        <p>  
           Try to answer the following code-related questions within the time
           limit. Keep in mind that incorrect answers will penalize your
           score/time by ten seconds!
         </p>
-        <button id="start">Start Quiz</button>
-      </div>
+        <button class= "btn" id="start">Start Quiz</button>  <!-- class added. Thinking about change to bootstrap ... -->
 
+
+  
+      </div>
+      </section>
+
+<!-- Questions HTML Thinking about moving to separate page --------- added section markers -->
+      <section>
       <div id="questions" class="hide">
         <h2 id="question-title"></h2>
         <div id="choices" class="choices"></div>
       </div>
-
+      </section>
+<!-- End Screen HTML Thinking about moving to separate page -------- added section markers  -->
+      <section>
       <div id="end-screen" class="hide">
         <h2>All done!</h2>
         <p>Your final score is <span id="final-score"></span>.</p>
@@ -39,7 +54,11 @@
         </p>
       </div>
 
-      <div id="feedback" class="feedback hide"></div>
+      </section> 
+<!-- -------------   End Screen end --------------------------------- -->
+
+
+      <div id="feedback" class="feedback hide"></div>  <!-- to be checked and decided - keep this one on main page or move as part of end -->
     </div>
 
     <script src="./assets/js/questions.js"></script>
