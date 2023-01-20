@@ -1,7 +1,11 @@
 body {
   font-family: Arial;
   font-size: 120%;
+  background-color:azure;
 }
+
+/* thinking about hamburger menu */ 
+
 
 a {
   color: #563d7c;
@@ -56,6 +60,8 @@ li:nth-child(odd) {
 .wrapper {
   margin: 100px auto 0 auto;
   max-width: 600px;
+  background-color: aquamarine; /* to separate screens - to be removed /maybe replaced with Jumbotrone */
+ 
 }
 
 .hide {
