@@ -6,7 +6,7 @@ const mostRecentScore = localStorage.getItem('mostRecentScore');
 
 
 // High scores saving 
-// console test: localStorage.setItem("highScores",JSON.stringify([]));
+  localStorage.setItem("highScores",JSON.stringify([])); //console test:
 const highScores = JSON.parse( localStorage.getItem("highScores")) || []; // get high scores or if null - "get empty array"
 console.log(highScores); // test point: saving high scores
 console.log(JSON.parse(localStorage.getItem("highScores")));
