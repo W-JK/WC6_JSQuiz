@@ -10,7 +10,8 @@ const choices = Array.from(document.getElementsByClassName('choice-text'));
                                                                             */ 
 
 // test point - single answer  // console.log(choices) 
-    //---------------------- hud dsiplay -------------- 
+
+//---------------------- hud dsiplay -------------- 
 const progressText = document.getElementById('progressText'); // progress bar
 const progressBarFull = document.getElementById('progressBarFull'); // progress bar fill - as progress with questions
 
@@ -22,7 +23,7 @@ const scoreHud = document.getElementById('score');
     let questionCounter = 0;
     let availableQuestions = [];
 
-// ------------- question set ----------------- //
+// ------------- question set ----------------- 
 let questions = [
     {
         question: "question 1 text - text ",
@@ -95,12 +96,12 @@ getNewQuestion = () => {
         if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS /* || timer = 0 */ ){
             localStorage.setItem('mostRecentScore', score);
             //jesli nie ma dostepnych putan lub question counter jest mniejszy lub rowny max question przeznaczonych dla 1 sesji
-            return window.location.assign('/end.html'); // return to end/high score page
+            return window.location.assign("/starter/end.html"); // return to end/high score page
         }
 
     questionCounter++;
     // ----- hud counters  - questions -----
-  
+        
 
     //progres barr - question counter
     progressText.innerText = "Question " + questionCounter + "/" + MAX_QUESTIONS;
@@ -114,14 +115,13 @@ getNewQuestion = () => {
     currentQuestion = availableQuestions[questionIndex];  // reference to current question przypisany z zestawu available questions uzywajac questionIndex (?)
      question.innerText = currentQuestion.question;       // dodaje (wartosc?) HTML text z bierzacego pytania uzywajac jego question property (KEY?)
 
-// dla kazdego choices ta sama akcja - pobiez pytanie(?)  
+// get question ------------------------------------
      choices.forEach (choice =>{
-        // get number from dataset property "data-number"= ... from single answer HTML: div/p/class dla Choice ...</p>
         const number = choice.dataset['number'];
-        choice.innerText = currentQuestion['choice' + number]; // pobiera text dla pytania 
+        choice.innerText = currentQuestion['choice' + number]; // get question text
      } );
 
-     //remove used question from "new question array" dla current game
+     //remove used question from "new question array" for current game
      availableQuestions.splice(questionIndex,1);
 
      acceptingAnswer = true 
@@ -133,7 +133,7 @@ choice.addEventListener('click', e => {
   // console.log(e.target); // test point: registering click for each choice
 
   // ---------- comparing answers  ----------
-    if (!acceptingAnswer) return; // note: breakpoint - if not accepting more ansvers
+    if (!acceptingAnswer) return; // note: breakpoint - return if not accepting more ansvers 
     
     acceptingAnswer = false;
     const selectedChoice = e.target;
@@ -143,7 +143,7 @@ choice.addEventListener('click', e => {
     console.log(selectedAnswer == currentQuestion.answer); //test point: if selected answer = current question answer === comparing strict )including data == to be used
     
 
-    // behaviour on right and wrong
+    // behaviour on right and wrong - answer class asingment 
 
 
     const classToApply = 
@@ -156,6 +156,12 @@ choice.addEventListener('click', e => {
         } 
 
     // ----- hud count - timer ------------ to be created 
+        /* to be created !!!
+         if(classToApply === 'incorrect'){
+            decrementTime(TIME_Penalty)
+        }
+        */
+
     
     //adding class correct/incorrect to answer cattegory
         selectedChoice.parentElement.classList.add(classToApply);

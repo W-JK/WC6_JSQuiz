@@ -4,19 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All done!</title>
+    <link rel="stylesheet" href="/starter/assets/css/styles.css" />
 </head>
+
+
 <body>
     
 <!-- End Screen HTML Thinking about moving to separate page -------- added section markers  -->
 <section>
-    <div id="end-screen" class="hide">
-      <h2>All done!</h2>
-      <p>Your final score is <span id="final-score"></span>.</p>
-      <p>
-        Enter initials: <input type="text" id="initials" max="3" />
-        <button id="submit">Submit</button>
-      </p>
+    <div class = "container" id="end-screen" > <!-- class = "hide" removed -->
+      <h1 id="finalScore"> 0 </h1> 
+      
+      
+      <form>
+        <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="username"
+        
+        />
+        <button type="submit" 
+                class="btn" 
+                id="saveScoreBtn" 
+                onclick="saveHighScore(event)"
+                disabled
+                > 
+                
+                Save  
+        </button>
+    </form>
+
+
+
+
+      
+      
+      
+      
+      
+      
     </div>
 
     </section> 
