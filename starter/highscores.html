@@ -7,17 +7,24 @@
     <title>Highscores</title>
 
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="highscores.css" />
+
   </head>
 
   <body>
-    <div class="wrapper">
-      <h1>Highscores</h1>
-      <ol id="highscores"></ol>
+    <div class="container"> <!-- removed wrapper class to unify code / les lines in css -->
+      <div id="highScores" class="flex-center flex-column">
 
-      <a href="index.html"><button>Go Back</button></a>
-      <button id="clear">Clear Highscores</button>
+      <h1 id="finalScore"> High Scores </h1>
+      <ul id="highScoresList"></ul> 
+
+      <a href="index.html"> <button> Go Home </button> </a>
+
+       <button id="clear">Clear Highscores</button> <!-- not active -->
+
     </div>
+  </div>
 
-    <script src="./assets/js/scores.js"></script>
+    <script src="./assets/js/highscores.js"></script>
   </body>
 </html>
