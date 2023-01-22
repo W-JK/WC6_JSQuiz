@@ -12,45 +12,41 @@
 <body>
     
 <!-- End Screen HTML Thinking about moving to separate page -------- added section markers  -->
-<section>
-    <div class = "container" id="end-screen" > <!-- class = "hide" removed -->
-      <h1 id="finalScore"> 0 </h1> 
-      
-      
-      <form>
-        <input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="username"
-        
-        />
-        <button type="submit" 
-                class="btn" 
-                id="saveScoreBtn" 
-                onclick="saveHighScore(event)"
-                disabled
-                > 
-                
-                Save  
-        </button>
-    </form>
+    <section>
+      <div class = "container" id="end-screen" > <!-- class = "hide" removed -->
+          <h1 id="finalScore"> 0 </h1> 
+          
+          
+          <form>
+            <input
+                type="text"
+                name="username"
+                id="username"
+                placeholder="username"
+            
+            />
+            <button type="submit" 
+                    class="btn" 
+                    id="saveScoreBtn" 
+                    onclick="saveHighScore(event)"
+                    disabled
+                    > 
+                    
+                    Save  
+            </button>
+        </form>
 
-
-
-
-      
-      
-      
-      
-      
-      
-    </div>
+        <a class="btn" href="/starter/game.html"> Play Again </a>
+        <a href="/starter/index.html" class="btn"> Go Home </a>        
+          
+              
+          
+      </div>
 
     </section> 
-<!-- -------------   End Screen end --------------------------------- -->
+    <!-- -------------   End Screen end --------------------------------- -->
 
 
-
+    <script scr="/starter/assets/end.js"></script>
 </body>
 </html>
