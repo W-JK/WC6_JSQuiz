@@ -10,7 +10,11 @@ const choices = Array.from(document.getElementsByClassName('choice-text'));
                                                                             */ 
 
 // test point - single answer  // console.log(choices) 
+    //---------------------- hud dsiplay -------------- 
+const progressText = document.getElementById('progressText'); // progress bar
+const progressBarFull = document.getElementById('progressBarFull'); // progress bar fill - as progress with questions
 
+const scoreHud = document.getElementById('score');
     // -------------------------- 
     let currentQuestion ={};
     let acceptingAnswer = true;
