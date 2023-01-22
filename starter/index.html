@@ -27,34 +27,22 @@
     <!-- Quiz Home Page ------------  added section markers - Visual Decision - Jumbotron?  -->
     <section>
     <div class="wrapper">
-      <div id="start-screen" class="start">
+      <div id="start-screen" class="start" alt="Start Screen">
         <h1>Coding Quiz Challenge</h1>
         <p>  
           Try to answer the following code-related questions within the time
           limit. Keep in mind that incorrect answers will penalize your
           score/time by ten seconds!
         </p>
-        <button class= "btn" id="start" href = "#questions">Start Quiz</button>  <!-- class added. Thinking about change to bootstrap ... -->
-
+        <button class= "btn" id="start" href = "/game.html" alt="Start Quiz button">Start Quiz</button>  <!-- class added. Thinking about change to bootstrap ... -->
+        <button class= "btn" id="highscores" href = "/highscores.html" alt="view high scores list"> High Scores</button>
 
   
       </div>
       </section>
 
 
-<!-- End Screen HTML Thinking about moving to separate page -------- added section markers  -->
-      <section>
-      <div id="end-screen" class="hide">
-        <h2>All done!</h2>
-        <p>Your final score is <span id="final-score"></span>.</p>
-        <p>
-          Enter initials: <input type="text" id="initials" max="3" />
-          <button id="submit">Submit</button>
-        </p>
-      </div>
 
-      </section> 
-<!-- -------------   End Screen end --------------------------------- -->
 
 
       <div id="feedback" class="feedback hide"></div>  <!-- to be checked and decided - keep this one on main page or move as part of end -->
