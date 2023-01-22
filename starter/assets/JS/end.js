@@ -36,7 +36,7 @@ saveHighScore = e => {
     highScores.splice(5); // cutting of to the first 5
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('/');
+    window.location.assign('./end.html'); // ? error with saving scores 
 
     console.table(highScores);
 

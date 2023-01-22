@@ -16,6 +16,7 @@ const progressText = document.getElementById('progressText'); // progress bar
 const progressBarFull = document.getElementById('progressBarFull'); // progress bar fill - as progress with questions
 
 const scoreHud = document.getElementById('score');
+
     // -------------------------- 
     let currentQuestion ={};
     let acceptingAnswer = true;
@@ -78,7 +79,7 @@ const MAX_QUESTIONS = 3;
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    //timer
+    //timer to set - start value
 
     // --------------------  generate questions ---------------------- 
     availableQuestions = [...questions]; // pobiera wszystkie pytania z array (let questions [...]; i tworzy nowy array z wybranymi )
@@ -93,11 +94,11 @@ startGame = () => {
 // ----------------------  function - get new question ------------------------
 getNewQuestion = () => {
 
-        if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS /* || timer = 0 */ ){
+        if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS  ){
             localStorage.setItem('mostRecentScore', score);
             //jesli nie ma dostepnych putan lub question counter jest mniejszy lub rowny max question przeznaczonych dla 1 sesji
             return window.location.assign("/starter/end.html"); // return to end/high score page
-        }
+        } /* || timer = 0  IN IF ||*/ 
 
     questionCounter++;
     // ----- hud counters  - questions -----
