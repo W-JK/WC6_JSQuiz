@@ -6,12 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Quiz - Play Game </title>
 
+    
+    <link rel="stylesheet" href="./assets/css/styles.css" />
     <link rel="stylesheet" href="./assets/css/ingame.css" />
+    
 
 
 </head>
+
+
 <body>
-    
+  
+
+ 
+    <div class="container">
+      <div id="game" class="justify-center flex-column">
+
+        <!-- ------- hud section: current score,remaining time and question display --------  -->
+        <section>
+         <!--  -- Timer --
+
+        <div class="timer">Time: <span id="time">0</span></div>  -- Is Time required on a main page? Could be moved into separate file with Qestions --
+
+        -- timer end -- -->
+
+        </section>
+
+
+        <!-- ------------------- answer container ---------------------------  -->
+         <h2 id="question">  Answer my question </h2> 
+         <section> <!-- ----  question's set --------------------------------------  -->
+                 <!-- single answer A -->
+                 <div class="choice-container">            
+                   <p class="choice-prefix">A</p>
+                   <p class="choice-text" data-number="1"> Choice 1</p>
+                 </div>
+                 <!-- single answer A end -->
+       
+                  <!-- single answer B -->
+                  <div class="choice-container">            
+                   <p class="choice-prefix">B</p>
+                   <p class="choice-text" data-number="2"> Choice 2</p>
+                 </div>
+                 <!-- single answer B end -->
+       
+                  <!-- single answer C -->
+                  <div class="choice-container">            
+                   <p class="choice-prefix">C</p>
+                   <p class="choice-text" data-number="3"> Choice 3</p>
+                 </div>
+                 <!-- single answer C end -->
+       
+                  <!-- single answer D -->
+                  <div class="choice-container">            
+                   <p class="choice-prefix">D  </p>
+                   <p class="choice-text" data-number="4"> Choice 4</p>
+                 </div>
+                 <!-- single answer D end -->         
+       
+                 <!-- -----------  answer container end ----------- -->
+         </section>
+       
+               </div>
+         </div>
+  
+  
+
+  <script src="/starter/assets/JS/game.js">  </script>
 </body>
 </html>
 
@@ -23,17 +84,4 @@
 
 <!-- moved from index.html
 
--- Timer --
 
-<div class="timer">Time: <span id="time">0</span></div>  -- Is Time required on a main page? Could be moved into separate file with Qestions --
-
--- timer end --
-
-<section>
-    <div id="questions" class="hide">
-      <h2 id="question-title"></h2>
-      <div id="choices" class="choices"></div>
-    </div>
-    </section>
-
--->

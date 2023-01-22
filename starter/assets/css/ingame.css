@@ -1,0 +1,35 @@
+
+.choice-container{
+    display:flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb(86, 165,235,0.25);
+    background-color: aliceblue;
+}
+
+.choice-container:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86,185, 235,0.5); /* rgba(red, green, blue, alpha); */
+    transform: translateY(-0.1rem);
+    transition: transform 150ms ;
+}
+
+.choice-prefix{
+    padding: 1.5rem 2.5rem;
+    background-color: #56a5eb;
+    color: white;
+}
+
+.choice-text {
+    padding:1.5rem;
+    width:100%; /* poszerza pole textowe do wielkosci boxa - aby mozna bylo klikac nie tylko na txt */
+}
+
+.correct{
+    background-color: #28a745; /* bootstrap green - for correct */
+}
+
+.incorrect {
+ background-color: #dc3545; /* bootstrap red - incorrect */
+}
