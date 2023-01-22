@@ -33,3 +33,37 @@
 .incorrect {
  background-color: #dc3545; /* bootstrap red - incorrect */
 }
+
+/* -------------- Hud section styling ---------------------- */
+
+#hud {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.hud-prefix{
+    text-align: center;
+    font-size: 2rem;
+    
+}
+
+.hud-main-text {
+    text-align: center;
+}
+
+#progressBar{
+    width: 20rem;
+    height: 4rem;
+    border: 0.3rem solid #56a5eb;
+    border-radius: 0.8rem ;
+    margin-top: 1rem;
+}
+
+#progressBarFull{
+    height: 3.6rem;
+    background-color: #56a5eb;
+    width: 0%;
+}
+
+/* --------------------------- hud styling end --------------
