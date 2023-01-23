@@ -16,6 +16,7 @@ const progressText = document.getElementById('progressText'); // progress bar
 const progressBarFull = document.getElementById('progressBarFull'); // progress bar fill - as progress with questions
 
 const scoreHud = document.getElementById('score');
+const countDownHud = document.getElementById('countDown');
 
     // -------------------------- 
     let currentQuestion ={};
@@ -23,6 +24,7 @@ const scoreHud = document.getElementById('score');
     let score = 0;
     let questionCounter = 0;
     let availableQuestions = [];
+    let startingMinutes = 0 
 
 // ------------- question set ----------------- 
 let questions = [
@@ -79,7 +81,21 @@ const MAX_QUESTIONS = 3;
 startGame = () => {
     questionCounter = 0;
     score = 0;
+    startingMinutes = 4; // hardcoded - to be changed 
+    let time = startingMinutes * 60; // adding seconds to the timer 
+
+
     //timer to set - start value
+
+    setInterval(updateCountDown, 1000);
+    function updateCountDown() {
+        const minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        // countDownHud.innerHTML = '${minutes}: ${seconds}';
+        countDownHud.innerHTML = minutes + " : " + seconds ;
+        time--;
+    }
 
     // --------------------  generate questions ---------------------- 
     availableQuestions = [...questions]; // pobiera wszystkie pytania z array (let questions [...]; i tworzy nowy array z wybranymi )
@@ -94,7 +110,7 @@ startGame = () => {
 // ----------------------  function - get new question ------------------------
 getNewQuestion = () => {
 
-        if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS  ){
+        if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS ){
             localStorage.setItem('mostRecentScore', score);
             //jesli nie ma dostepnych putan lub question counter jest mniejszy lub rowny max question przeznaczonych dla 1 sesji
             return window.location.assign("/starter/end.html"); // return to end/high score page
