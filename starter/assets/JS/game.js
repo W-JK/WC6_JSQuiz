@@ -72,6 +72,7 @@ let questions = [
 // Constants 
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
+const TIME_PENALTY = -10;
 
 // const start time - questions * time per question
 // const INCORRECT_TIME
@@ -81,20 +82,32 @@ const MAX_QUESTIONS = 3;
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    startingMinutes = 4; // hardcoded - to be changed 
-    let time = startingMinutes * 60; // adding seconds to the timer 
+    startingMinutes = 1; // hardcoded - to be changed 
+    time = startingMinutes * 60; // adding seconds to the timer 
+    
 
 
     //timer to set - start value
 
     setInterval(updateCountDown, 1000);
     function updateCountDown() {
+        
         const minutes = Math.floor(time / 60);
         let seconds = time % 60;
-
-        // countDownHud.innerHTML = '${minutes}: ${seconds}';
-        countDownHud.innerHTML = minutes + " : " + seconds ;
-        time--;
+        
+        if (seconds < 0 ) {
+            
+            clearInterval(updateCountDown)
+            
+        }
+        
+        else { 
+            // countDownHud.innerHTML = '${minutes}: ${seconds}';
+            countDownHud.innerHTML = minutes + " : " + seconds ;
+            time--;  
+        };
+        // test point: console.log(time) 
+        
     }
 
     // --------------------  generate questions ---------------------- 
@@ -110,12 +123,13 @@ startGame = () => {
 // ----------------------  function - get new question ------------------------
 getNewQuestion = () => {
 
-        if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS ){
+        if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS ){ 
             localStorage.setItem('mostRecentScore', score);
             //jesli nie ma dostepnych putan lub question counter jest mniejszy lub rowny max question przeznaczonych dla 1 sesji
             return window.location.assign("/starter/end.html"); // return to end/high score page
-        } /* || timer = 0  IN IF ||*/ 
+        } /* || timer = 0  IN IF || not working.. */ 
 
+        
     questionCounter++;
     // ----- hud counters  - questions -----
         
@@ -176,15 +190,12 @@ choice.addEventListener('click', e => {
 
         if (classToApply === 'incorrect') {
             var snd = new Audio('/starter/assets/sfx/incorrect.wav');  //relative path starter\assets\sfx\incorrect.wav
-            snd.play();
+            snd.play(); 
+            time = time + TIME_PENALTY    // time penalty       
         }
 
     // ----- hud count - timer ------------ to be created 
-        /* to be created !!!
-         if(classToApply === 'incorrect'){
-            decrementTime(TIME_Penalty)
-        }
-        */
+     
 
     
     //adding class correct/incorrect to answer cattegory
