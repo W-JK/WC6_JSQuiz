@@ -1,6 +1,6 @@
 const highScoresList = document.getElementById('highScoresList');
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-// test point - high scores list: console.log(highScores);
+console.log(highScores); // test point - high scores list:
 
 /* ? replaced ?
 highScores.map(score => {
@@ -25,7 +25,7 @@ highScoresList.innerHTML =
         })
         // .join("");
 
-    
+        
 
 
 
