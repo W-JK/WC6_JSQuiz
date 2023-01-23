@@ -13,7 +13,8 @@ highScores.map(score => {
 highScoresList.innerHTML = 
     highScores
         .map(score =>{
-            return score.name + " - " + score.score ;
+            
+            return   score.name + " - " + score.score;
             
             // '<li class="high-score">${score.name}-${score.score}</li> ';
         })
