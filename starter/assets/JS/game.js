@@ -154,7 +154,14 @@ choice.addEventListener('click', e => {
     // --- hud count - scores -----
         if(classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
+            var snd = new Audio('/starter/assets/sfx/correct.wav');  //play sound on event
+            snd.play();
         } 
+
+        if (classToApply === 'incorrect') {
+            var snd = new Audio('/starter/assets/sfx/incorrect.wav');  //relative path starter\assets\sfx\incorrect.wav
+            snd.play();
+        }
 
     // ----- hud count - timer ------------ to be created 
         /* to be created !!!
