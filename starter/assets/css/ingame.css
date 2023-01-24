@@ -10,7 +10,7 @@
 
 .choice-container:hover{
     cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86,185, 235,0.5); /* rgba(red, green, blue, alpha); */
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86,185, 235,0.5); 
     transform: translateY(-0.1rem);
     transition: transform 150ms ;
 }
@@ -23,7 +23,7 @@
 
 .choice-text {
     padding:1.5rem;
-    width:100%; /* poszerza pole textowe do wielkosci boxa - aby mozna bylo klikac nie tylko na txt */
+    width:100%; /* expanding text box to clicable field  */
 }
 
 .correct{
@@ -32,7 +32,7 @@
 }
 
 .incorrect {
- background-color: #dc3545; /* bootstrap red - incorrect */
+ background-color: #dc3545; /* bootstrap red - for incorrect */
 }
 
 /* -------------- Hud section styling ---------------------- */

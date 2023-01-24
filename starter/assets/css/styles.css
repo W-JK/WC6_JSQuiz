@@ -51,11 +51,11 @@ p {
 /* ------------------- Utilities - home --------------------- */
 
 .container {
-    width: 100vw; /* full page size */ 
-    height: 100vw; /* full page size */ 
+    width: 100vw;  
+    height: 100vw; 
     display: flex; 
-    justify-content: center; /* center horyzontaly - szerokosc  */ 
-    align-items: center; /* center verticaly - dlugosc*/ 
+    justify-content: center; 
+    align-items: center; 
 
     /* stop expanding - on large screen add padding on sides, on smaller screens remove padding*/
     max-width: 80rem; 
@@ -64,34 +64,13 @@ p {
 
 }
 
-/* container child */
 .container > * {
     width: 100%;
 }
 
-/* --- temp removed --- same as container
-.wrapper {
-    width: 100vw;  
-    height: 100vw; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    max-width: 80rem; 
-    margin: 0 auto;
-    padding: 2rem;
-
-}
-.wrapper > * {
-    width: 100%;
-}
-*/
-
-
-
-
 .flex-column{
     display: flex;
-    flex-direction: column; /* zmienia polozenie elemento z poziomego, do pionowego */
+    flex-direction: column; 
 }
 
 .flex-center {
@@ -104,7 +83,7 @@ p {
 }
 
 
-/* hide xontent if required */
+/* hide content if required */
 .hidden {
     display: none;
 }
