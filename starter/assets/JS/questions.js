@@ -1,4 +1,5 @@
-console.log("Quiz Questions")
+// test point: console.log("Quiz Questions")
+
 // Question test skeleton 
 
 /*   {

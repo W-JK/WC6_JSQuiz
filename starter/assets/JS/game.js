@@ -1,4 +1,5 @@
-console.log("start game"); // test point: game start
+ // test point - game start: console.log("start game");
+
 // ----------------   variables 
 
      // -------------------------
@@ -9,7 +10,7 @@ const choices = Array.from(document.getElementsByClassName('choice-text'));
                                                                             number:"1" 
                                                                             */ 
 
-// test point - single answer  // console.log(choices) 
+// test point - single answer:  // console.log(choices) 
 
 //---------------------- hud dsiplay -------------- 
 const progressText = document.getElementById('progressText'); // progress bar
@@ -74,15 +75,11 @@ const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
 const TIME_PENALTY = -10;
 
-// const start time - questions * time per question
-// const INCORRECT_TIME
-
-
 
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    startingMinutes = 1; // hardcoded - to be changed 
+    startingMinutes = 5; 
     time = startingMinutes * 60; // adding seconds to the timer 
     
 
@@ -96,13 +93,10 @@ startGame = () => {
         let seconds = time % 60;
         
         if (seconds < 0 ) {
-            
             clearInterval(updateCountDown)
-            
         }
         
         else { 
-            // countDownHud.innerHTML = '${minutes}: ${seconds}';
             countDownHud.innerHTML = minutes + " : " + seconds ;
             time--;  
         };
@@ -111,26 +105,25 @@ startGame = () => {
     }
 
     // --------------------  generate questions ---------------------- 
-    availableQuestions = [...questions]; // pobiera wszystkie pytania z array (let questions [...]; i tworzy nowy array z wybranymi )
-    // test point: console.log(availableQuestions);   //  wyswietla pytania after startGame(); function is triggered
+    availableQuestions = [...questions]; // get all questions and chose question set
+    // test point: console.log(availableQuestions);   //  display questions after startGame(); function is triggered
 
     getNewQuestion(); //   getNewQuestion - function start point
 };
-
-
-                                                                                // note: arrow syntax: function name = (multiple parameters) => {function body}  //single parameter can be added without ()
+                                                                  
 
 // ----------------------  function - get new question ------------------------
+
 getNewQuestion = () => {
 
         if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS ){ 
             localStorage.setItem('mostRecentScore', score);
-            //jesli nie ma dostepnych putan lub question counter jest mniejszy lub rowny max question przeznaczonych dla 1 sesji
+            //if there is no awailable questions or question counter is smaller or equal max questions for current sesion
             return window.location.assign("/starter/end.html"); // return to end/high score page
-        } /* || timer = 0  IN IF || not working.. */ 
-
+        } 
         
     questionCounter++;
+
     // ----- hud counters  - questions -----
         
 
@@ -138,13 +131,13 @@ getNewQuestion = () => {
     progressText.innerText = "Question " + questionCounter + "/" + MAX_QUESTIONS;
     // update progress barr fill 
      console.log((questionCounter/MAX_QUESTIONS)*100) 
-    progressBarFull.style.width = ((questionCounter/MAX_QUESTIONS)*100 )+ "%"; // note: "%" przekazuje wart procentowa wyrazenia do css
+    progressBarFull.style.width = ((questionCounter/MAX_QUESTIONS)*100 )+ "%"; 
 
 
-    const questionIndex = Math.floor(Math.random() * availableQuestions.length );   // note: nowa stala: questionIndex = sprawdza dlugisc elementu i wybiera randomowe pytanie; 
+    const questionIndex = Math.floor(Math.random() * availableQuestions.length );   // note: new constant - questionIndex = is checking lenght of element and choising random question; 
     // test point: console.log(questionIndex) 
-    currentQuestion = availableQuestions[questionIndex];  // reference to current question przypisany z zestawu available questions uzywajac questionIndex (?)
-     question.innerText = currentQuestion.question;       // dodaje (wartosc?) HTML text z bierzacego pytania uzywajac jego question property (KEY?)
+    currentQuestion = availableQuestions[questionIndex];  
+     question.innerText = currentQuestion.question;       
 
 // get question ------------------------------------
      choices.forEach (choice =>{
@@ -170,18 +163,19 @@ choice.addEventListener('click', e => {
     const selectedChoice = e.target;
     const selectedAnswer = selectedChoice.dataset["number"];
 
-    console.log(selectedAnswer, currentQuestion.answer); // test point - comparing answers
-    console.log(selectedAnswer == currentQuestion.answer); //test point: if selected answer = current question answer === comparing strict )including data == to be used
+    // test point - comparing answers: console.log(selectedAnswer, currentQuestion.answer); 
+    //test point: console.log(selectedAnswer == currentQuestion.answer);      // if selected answer = current question answer === comparing strict )including data == to be used
     
 
-    // behaviour on right and wrong - answer class asingment 
+    // ---------- behaviour on right and wrong - answer class asingment ---------------------------------------------
 
 
     const classToApply = 
         selectedAnswer == currentQuestion.answer ? "correct" : "incorrect"; // same as if/else - assigning answer category
         //test point: console.log(classToApply); 
 
-    // --- hud count - scores -----
+    // --- hud count - scores --------------------------------------------------------------
+
         if(classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
             var snd = new Audio('/starter/assets/sfx/correct.wav');  //play sound on event
@@ -193,9 +187,7 @@ choice.addEventListener('click', e => {
             snd.play(); 
             time = time + TIME_PENALTY    // time penalty       
         }
-
-    // ----- hud count - timer ------------ to be created 
-     
+   
 
     
     //adding class correct/incorrect to answer cattegory
@@ -208,12 +200,12 @@ choice.addEventListener('click', e => {
 
         getNewQuestion(); //loading new question after answer 
 
-    }, 1000);   //note: 1000 milisecond's = 1 second
+    }, 1000);   
 
 })
 });
 
-};  // ? bug ?  - to be tested and remowed 
+};  
 
 // ------------------ get new question end --------------------------------
 
@@ -223,6 +215,6 @@ incrementScore = num => {
     scoreHud.innerText = score;
 }
 
-// rozpoczyna gre 
+// --------- game start point ---------------------------------------------
 startGame();
     

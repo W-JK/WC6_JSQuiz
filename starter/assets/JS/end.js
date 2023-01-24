@@ -11,7 +11,7 @@ const mostRecentScore = localStorage.getItem('mostRecentScore');
 
 const highScores = JSON.parse( localStorage.getItem("highScores")) || []; // get high scores or if null - "get empty array"
 const MAX_HIGH_SCORES = 5;
-console.log(highScores); // test point: saving high scores
+// test point: saving high scores:  console.log(highScores); 
 
 console.log(JSON.parse(localStorage.getItem("highScores")));
 
@@ -28,7 +28,7 @@ username.addEventListener('keyup',() => {
 
 
 saveHighScore = e => {
-    console.log("clicked the save button") // test point 
+   // test point:  console.log("clicked the save button") 
     e.preventDefault();
 
     const score = {
@@ -36,17 +36,17 @@ saveHighScore = e => {
         name: username.value
     }; 
 
-    console.log(score); // testpoint
+    // testpoint: console.log(score); 
 
     highScores.push(score);
-    console.log(highScores) //testpoint
+    //testpoint: console.log(highScores) 
     highScores.sort( (a,b) => b.score - a.score ) // return highest to lowest if b is higher put b before a (simplified: no return or brackets)
-    highScores.splice(5); // cutting of to the first 5
+    highScores.splice(5);                        // cutting of to the first 5
 
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    window.location.assign('./index.html'); // ? error with saving scores 
+    window.location.assign('./index.html');  
 
-    console.table(highScores);
+    // console.table(highScores);
 
 };
 
