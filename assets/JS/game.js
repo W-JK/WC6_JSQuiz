@@ -119,7 +119,7 @@ getNewQuestion = () => {
         if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS ){ 
             localStorage.setItem('mostRecentScore', score);
             //if there is no awailable questions or question counter is smaller or equal max questions for current sesion
-            return window.location.assign("./end.html"); // return to end/high score page
+            return window.location.assign("end.html"); // return to end/high score page
         } 
         
     questionCounter++;
@@ -178,12 +178,12 @@ choice.addEventListener('click', e => {
 
         if(classToApply === 'correct') {
             incrementScore(CORRECT_BONUS);
-            var snd = new Audio('./assets/sfx/correct.wav');  //play sound on event
+            var snd = new Audio('assets/sfx/correct.wav');  //play sound on event
             snd.play();
         } 
 
         if (classToApply === 'incorrect') {
-            var snd = new Audio('./assets/sfx/incorrect.wav');  //relative path starter\assets\sfx\incorrect.wav
+            var snd = new Audio('assets/sfx/incorrect.wav');  //relative path starter\assets\sfx\incorrect.wav
             snd.play(); 
             time = time + TIME_PENALTY    // time penalty       
         }
