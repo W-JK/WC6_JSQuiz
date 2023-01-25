@@ -46,7 +46,7 @@ saveHighScore = e => {
     localStorage.setItem('highScores', JSON.stringify(highScores));
     window.location.assign('index.html');  
 
-    console.table(highScores);
+    // testpoint: console.table(highScores);
 
 };
 
